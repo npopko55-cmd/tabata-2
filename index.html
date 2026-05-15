@@ -25,7 +25,7 @@
   <!-- Preload hero-картинки — попадает в первый экран, ускоряет LCP -->
   <link rel="preload" as="image" href="https://static.tildacdn.com/tild6566-3034-4361-a332-643963366461/522A7353_1.jpg" fetchpriority="high" />
 
-  <link rel="stylesheet" href="styles.css?v=20260515j" />
+  <link rel="stylesheet" href="styles.css?v=20260515k" />
 </head>
 <body>
 
@@ -131,16 +131,14 @@
     <h2 class="section__title">Что такое Табата 2.0?</h2>
 
     <div class="about__video-block">
-      <!-- Плейсхолдер до получения VIDEO_ID от Kinescope.
-           Когда придёт ID — заменить эту div на <iframe src="https://kinescope.io/embed/VIDEO_ID?autoplay=1&muted=1&loop=1"> -->
-      <div class="about__video-frame about__video-frame--placeholder" id="kinescopeVideo">
-        <div class="about__video-play" aria-label="Здесь будет видео">
-          <svg viewBox="0 0 80 80" width="80" height="80" aria-hidden="true">
-            <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.92)"/>
-            <path d="M33 25 L33 55 L57 40 Z" fill="#ce2c01"/>
-          </svg>
-          <span>Здесь будет видео</span>
-        </div>
+      <div class="about__video-frame" id="kinescopeVideo">
+        <iframe
+          src="https://kinescope.io/embed/8b8Kva3gxtibvo6p5etvAE?autoplay=1&muted=1&loop=1"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+          frameborder="0"
+          allowfullscreen
+          title="Что такое Шагательная Табата 2.0"
+        ></iframe>
       </div>
     </div>
 

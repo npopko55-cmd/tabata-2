@@ -293,11 +293,12 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 
 /* ======================== ABOUT (Что такое Табата 2.0) ============ */
-.about__video-block { margin-bottom: 28px; }
+.about__video-block { margin-bottom: 28px; display: flex; justify-content: center; }
 .about__video-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 560px;          /* квадрат не растягивается на широких экранах */
+  aspect-ratio: 1 / 1;       /* Kinescope-видео квадратное (1:1) */
   border-radius: var(--radius-md);
   overflow: hidden;
   background: linear-gradient(135deg, #1f1300 0%, #3a2410 100%);
@@ -308,20 +309,6 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   width: 100%; height: 100%;
   border: 0;
 }
-.about__video-frame--placeholder {
-  display: flex; align-items: center; justify-content: center;
-}
-.about__video-play {
-  display: flex; flex-direction: column; align-items: center; gap: 16px;
-  color: #fff;
-  font-family: var(--font-b);
-  font-size: 15px;
-  letter-spacing: 0.3px;
-  opacity: 0.95;
-  transition: transform .2s;
-}
-.about__video-play:hover { transform: scale(1.04); }
-.about__video-play svg { filter: drop-shadow(0 6px 18px rgba(0,0,0,.45)); }
 /* === H2: главный тезис под видео (большой) === */
 .about__claim {
   max-width: 920px;
