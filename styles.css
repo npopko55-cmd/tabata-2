@@ -344,46 +344,46 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .about__video-play:hover { transform: scale(1.04); }
 .about__video-play svg { filter: drop-shadow(0 6px 18px rgba(0,0,0,.45)); }
-/* === Главная фраза-claim под видео (большая) === */
+/* === Фраза-claim под видео (компактная) === */
 .about__claim {
-  max-width: 920px;
-  margin: 36px auto 0;
+  max-width: 740px;
+  margin: 28px auto 0;
   text-align: center;
-  font-family: var(--font-h);
-  font-size: 38px;
+  font-family: var(--font-b);
+  font-size: 18px;
   font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+  line-height: 1.5;
 }
 .about__claim strong { color: var(--color-primary); }
 .about__claim mark {
   background: var(--color-primary-hover);
   color: #1f1300;
-  padding: 2px 14px;
-  border-radius: 12px;
+  padding: 1px 10px;
+  border-radius: 8px;
   font-weight: 600;
   white-space: nowrap;
 }
-@media (max-width: 900px) {
-  .about__claim { font-size: 28px; }
-}
 @media (max-width: 540px) {
-  .about__claim { font-size: 22px; line-height: 1.25; }
-  .about__claim mark { padding: 1px 10px; border-radius: 8px; }
+  .about__claim { font-size: 16px; }
 }
 
-/* === Заголовок «В её основе:» (поменьше claim'а) === */
+/* === Заголовок «В её основе:» (большой, секционный) === */
 .about__lead-short {
   text-align: center;
-  font-family: var(--font-b);
-  font-size: 18px;
+  font-family: var(--font-h);
+  font-size: 38px;
   font-weight: 500;
   color: var(--color-text);
-  margin: 36px 0 22px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 40px 0 28px;
 }
 .about__lead-short strong { color: var(--color-primary); }
+@media (max-width: 900px) {
+  .about__lead-short { font-size: 28px; }
+}
 @media (max-width: 540px) {
-  .about__lead-short { font-size: 16px; margin: 28px 0 18px; }
+  .about__lead-short { font-size: 24px; margin: 28px 0 20px; }
 }
 
 .about__cards {
