@@ -344,46 +344,47 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .about__video-play:hover { transform: scale(1.04); }
 .about__video-play svg { filter: drop-shadow(0 6px 18px rgba(0,0,0,.45)); }
-/* === Краткая фраза-claim под видео === */
+/* === Главная фраза-claim под видео (большая) === */
 .about__claim {
-  max-width: 720px;
-  margin: 28px auto 0;
+  max-width: 920px;
+  margin: 36px auto 0;
   text-align: center;
-  font-size: 20px;
-  line-height: 1.5;
+  font-family: var(--font-h);
+  font-size: 38px;
   font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 .about__claim strong { color: var(--color-primary); }
 .about__claim mark {
   background: var(--color-primary-hover);
   color: #1f1300;
-  padding: 2px 8px;
-  border-radius: 6px;
+  padding: 2px 14px;
+  border-radius: 12px;
   font-weight: 600;
+  white-space: nowrap;
 }
-.about__source {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--color-muted);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color .2s;
+@media (max-width: 900px) {
+  .about__claim { font-size: 28px; }
 }
-.about__source:hover { color: var(--color-primary); }
-@media (max-width: 768px) {
-  .about__claim { font-size: 17px; }
+@media (max-width: 540px) {
+  .about__claim { font-size: 22px; line-height: 1.25; }
+  .about__claim mark { padding: 1px 10px; border-radius: 8px; }
 }
 
-/* === Лид + сетка карточек «В основе метода Табаты» === */
+/* === Заголовок «В её основе:» (поменьше claim'а) === */
 .about__lead-short {
   text-align: center;
-  font-family: var(--font-h);
-  font-size: 22px;
+  font-family: var(--font-b);
+  font-size: 18px;
   font-weight: 500;
-  margin: 32px 0 24px;
+  color: var(--color-text);
+  margin: 36px 0 22px;
 }
 .about__lead-short strong { color: var(--color-primary); }
+@media (max-width: 540px) {
+  .about__lead-short { font-size: 16px; margin: 28px 0 18px; }
+}
 
 .about__cards {
   display: grid;
