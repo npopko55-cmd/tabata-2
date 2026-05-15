@@ -895,6 +895,30 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   background-color: #fff;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" stroke="%23ce2c01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>');
 }
+
+/* === Первый «hero»-пункт с молнией вместо галочки === */
+.rate-card__features-hero {
+  font-size: 16px;
+  margin-bottom: 4px;
+  padding-left: 30px;
+  position: relative;
+}
+.rate-card__features-hero::before {
+  content: "⚡" !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: 18px;
+  line-height: 1;
+  top: 0 !important;
+  left: 2px !important;
+}
+.rate-card__features-hero strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.rate-card--featured .rate-card__features-hero strong { color: var(--color-primary-hover); }
 .rate-card__features li em {
   font-style: normal; font-weight: 600;
 }

@@ -25,7 +25,7 @@
   <!-- Preload hero-картинки — попадает в первый экран, ускоряет LCP -->
   <link rel="preload" as="image" href="https://static.tildacdn.com/tild6566-3034-4361-a332-643963366461/522A7353_1.jpg" fetchpriority="high" />
 
-  <link rel="stylesheet" href="styles.css?v=20260515f" />
+  <link rel="stylesheet" href="styles.css?v=20260515g" />
 </head>
 <body>
 
@@ -34,10 +34,6 @@
 <!-- ============================================================ -->
 <header class="header" id="header">
   <div class="container header__inner">
-    <button class="header__burger" id="burgerBtn" aria-label="Открыть меню">
-      <span></span><span></span><span></span>
-    </button>
-
     <a href="/" class="header__logo" aria-label="ШАГАЙ ДОМА">
       <svg viewBox="0 0 106.01 49.13" fill="none" aria-hidden="true">
         <path d="M27.36 36.85L22.19 37.4V20.22L14.26 20.6V38.26L8.68 38.86V20.87L0 21.28V45.81L34.6 41.41V19.62L27.36 19.97V36.85Z" fill="#CF2C02"/>
@@ -48,11 +44,6 @@
         <path d="M99.07 18.22L103.82 6.75L100.67 6.76L101.32 0L96.48 11.33L99.58 11.26L99.07 18.22Z" fill="#CF2C02"/>
       </svg>
     </a>
-
-    <nav class="header__nav">
-      <a href="#about">Что такое Табата</a>
-      <a href="#forwhom">Для кого</a>
-    </nav>
 
     <div class="header__actions">
       <a href="#rates" class="btn btn--primary btn--sm">Записаться на Табату</a>
@@ -103,20 +94,12 @@
   <div class="container">
     <div class="hero__grid">
       <div class="hero__card">
-        <nav class="breadcrumbs">
-          <a href="/">Главная</a>
-          <span>/</span>
-          <a href="/programs">Программы</a>
-          <span>/</span>
-          <span>Шагательная табата 2.0</span>
-        </nav>
-
         <h1 class="hero__title">Шагательная табата <span class="hero__title-accent">2.0</span></h1>
 
         <ul class="hero__stats">
           <li>
             <img src="https://static.tildacdn.com/tild3762-3562-4835-b433-356337363563/Vector.svg" alt="" />
-            <div><strong>25</strong><span>тренировок</span></div>
+            <div><strong>26</strong><span>тренировок</span></div>
           </li>
           <li>
             <img src="https://static.tildacdn.com/tild6631-3936-4530-a539-643738353631/Vector-1.svg" alt="" />
@@ -228,7 +211,7 @@
       </li>
       <li>
         <span class="forwhom__bullet">✓</span>
-        <span>Обрести новых друзей и соревноваться за призы?</span>
+        <span>Обрести новых друзей в стремлении к результату?</span>
       </li>
     </ul>
 
@@ -310,6 +293,7 @@
         </div>
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 498 ₽</a>
         <ul class="rate-card__features">
+          <li class="rate-card__features-hero"><strong>Интенсив «Табата 2.0»</strong></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 320+ шагательных тренировок</li>
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
@@ -330,6 +314,7 @@
         </div>
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 698 ₽</a>
         <ul class="rate-card__features">
+          <li class="rate-card__features-hero"><strong>Интенсив «Табата 2.0»</strong></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 320+ шагательных тренировок</li>
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
@@ -349,6 +334,7 @@
         </div>
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 1 365 ₽</a>
         <ul class="rate-card__features">
+          <li class="rate-card__features-hero"><strong>Интенсив «Табата 2.0»</strong></li>
           <li><em>Бесплатное пополнение шагательных тренировок и программ</em></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 320+ шагательных тренировок</li>
