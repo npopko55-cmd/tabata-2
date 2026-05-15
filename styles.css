@@ -448,6 +448,98 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 .update-card p { margin: 0; color: var(--color-muted); font-size: 15px; line-height: 1.5; }
 @media (max-width: 900px) { .updates__grid { grid-template-columns: 1fr; } }
 
+/* === Плашка-бонус «И вы получаете доступ к клубу» === */
+.updates__bonus {
+  margin-top: 28px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+  box-shadow: 0 14px 36px rgba(206, 44, 1, .22);
+  position: relative;
+  overflow: hidden;
+}
+.updates__bonus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://static.tildacdn.com/tild3562-3535-4166-b634-663130393766/SVG.png') no-repeat right center / 50% auto;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.updates__bonus > * { position: relative; z-index: 1; }
+
+.updates__bonus-icon {
+  width: 64px; height: 64px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.18);
+  color: var(--color-primary-hover);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.updates__bonus-text h3 {
+  font-size: 22px;
+  font-family: var(--font-h);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+.updates__bonus-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: .92;
+}
+.updates__bonus-text strong { color: var(--color-primary-hover); }
+
+.updates__bonus-stats {
+  display: flex;
+  gap: 28px;
+  flex-shrink: 0;
+  padding-left: 24px;
+  border-left: 1px solid rgba(255,255,255,.28);
+}
+.updates__bonus-stats > div {
+  text-align: center;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.updates__bonus-stats strong {
+  font-family: var(--font-h);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-primary-hover);
+}
+.updates__bonus-stats span {
+  font-size: 12px;
+  opacity: .85;
+  text-transform: lowercase;
+}
+
+@media (max-width: 768px) {
+  .updates__bonus {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 24px 22px;
+    gap: 18px;
+  }
+  .updates__bonus-icon { justify-self: center; }
+  .updates__bonus-stats {
+    justify-content: center;
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,.28);
+    padding-top: 18px;
+    gap: 36px;
+  }
+  .updates__bonus-text h3 { font-size: 19px; }
+  .updates__bonus-stats strong { font-size: 32px; }
+}
+
 /* ======================== CASES + MARQUEE ===================== */
 .cases .section__title-sub {
   display: block;
