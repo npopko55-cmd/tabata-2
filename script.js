@@ -1,0 +1,142 @@
+/* =============================================================
+   Шагательная Табата 2.0 — клиентский JS
+   Без зависимостей. Запускается на DOMContentLoaded.
+   ============================================================= */
+
+(() => {
+  'use strict';
+
+  /* ---------- 0. Конфиг (правится для каждого запуска) ---------- */
+  const CONFIG = {
+    // Дата окончания таймера на центральном тарифе (UTC)
+    countdownDeadline: '2026-06-30T23:59:59+03:00'
+  };
+
+  /* ---------- 1. Год в футере ---------- */
+  const year = document.getElementById('footerYear');
+  if (year) year.textContent = new Date().getFullYear();
+
+  /* ---------- 2. Sticky header (тень при скролле) ---------- */
+  const header = document.getElementById('header');
+  const onScrollHeader = () => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScrollHeader, { passive: true });
+  onScrollHeader();
+
+  /* ---------- 3. Burger / overlay-nav ---------- */
+  const burger = document.getElementById('burgerBtn');
+  const overlayNav = document.getElementById('overlayNav');
+  const overlayBackdrop = document.getElementById('overlayBackdrop');
+  const closeNavBtn = document.getElementById('closeNavBtn');
+
+  const setNavState = (open) => {
+    if (!overlayNav) return;
+    overlayNav.classList.toggle('is-open', open);
+    overlayNav.setAttribute('aria-hidden', String(!open));
+    overlayBackdrop?.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  burger?.addEventListener('click', () => setNavState(true));
+  closeNavBtn?.addEventListener('click', () => setNavState(false));
+  overlayBackdrop?.addEventListener('click', () => setNavState(false));
+
+  // Закрывать при клике по ссылке внутри
+  overlayNav?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => setNavState(false));
+  });
+
+  /* ---------- 4. Popup «Рассрочка» ---------- */
+  const popup = document.getElementById('popup-installment');
+  const openPopup = () => {
+    popup?.classList.add('is-open');
+    popup?.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  const closePopup = () => {
+    popup?.classList.remove('is-open');
+    popup?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  document.querySelectorAll('[data-popup]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPopup();
+    });
+  });
+  popup?.querySelectorAll('[data-close]').forEach((el) => {
+    el.addEventListener('click', closePopup);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closePopup();
+      setNavState(false);
+    }
+  });
+
+  /* ---------- 5. Reviews slider (стрелки) ---------- */
+  const track = document.getElementById('reviewsTrack');
+  const prevBtn = document.getElementById('reviewsPrev');
+  const nextBtn = document.getElementById('reviewsNext');
+  const scrollByCard = (dir) => {
+    if (!track) return;
+    const card = track.querySelector('.review-card');
+    const step = (card?.offsetWidth || 300) + 16;
+    track.scrollBy({ left: step * dir, behavior: 'smooth' });
+  };
+  prevBtn?.addEventListener('click', () => scrollByCard(-1));
+  nextBtn?.addEventListener('click', () => scrollByCard(1));
+
+  /* Countdown удалён по запросу — таймер на тарифе больше не используется. */
+
+  /* ---------- 7. Back to top ---------- */
+  const btt = document.getElementById('backToTop');
+  const onScrollBTT = () => {
+    btt?.classList.toggle('is-visible', window.scrollY > 600);
+  };
+  window.addEventListener('scroll', onScrollBTT, { passive: true });
+  btt?.addEventListener('click', () =>
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  );
+
+  /* ---------- 7b. Sticky mobile CTA ---------- */
+  const stickyCTA = document.getElementById('stickyCTA');
+  const ratesSection = document.getElementById('rates');
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+  const onScrollSticky = () => {
+    if (!stickyCTA) return;
+    if (!isMobile()) {
+      stickyCTA.classList.remove('is-visible');
+      return;
+    }
+    // Показываем после прокрутки за первый экран
+    const showAfter = window.innerHeight * 0.6;
+    // Скрываем, когда юзер находится прямо на блоке прайса
+    let nearRates = false;
+    if (ratesSection) {
+      const r = ratesSection.getBoundingClientRect();
+      nearRates = r.top < window.innerHeight * 0.6 && r.bottom > 0;
+    }
+    stickyCTA.classList.toggle('is-visible', window.scrollY > showAfter && !nearRates);
+  };
+  window.addEventListener('scroll', onScrollSticky, { passive: true });
+  window.addEventListener('resize', onScrollSticky);
+  onScrollSticky();
+
+  /* ---------- 8. Smooth anchor scroll (с учётом sticky header) ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#' || href.startsWith('#popup')) return;
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const offset = (header?.offsetHeight || 0) + 8;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+})();
