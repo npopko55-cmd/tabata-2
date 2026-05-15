@@ -322,13 +322,34 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .about__video-play:hover { transform: scale(1.04); }
 .about__video-play svg { filter: drop-shadow(0 6px 18px rgba(0,0,0,.45)); }
+/* === Краткий лид под видео === */
+.about__intro {
+  max-width: 720px;
+  margin: 24px auto 8px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+.about__intro strong { color: var(--color-primary); }
+.about__source {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+.about__source:hover { color: var(--color-primary); }
+
 /* === Лид + сетка карточек «В основе метода Табаты» === */
 .about__lead-short {
   text-align: center;
   font-family: var(--font-h);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
-  margin: 8px 0 28px;
+  margin: 32px 0 24px;
 }
 .about__lead-short strong { color: var(--color-primary); }
 
@@ -487,6 +508,17 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   color: var(--color-primary);
   line-height: 1;
   margin-bottom: 4px;
+}
+.update-card--secret {
+  background: linear-gradient(135deg, #1f1300 0%, #3a2410 100%);
+  color: #fff;
+  border-color: var(--color-primary-hover);
+}
+.update-card--secret p { color: rgba(255,255,255,.85); }
+.update-card--secret strong { color: var(--color-primary-hover); }
+.update-card__badge--gift {
+  background: var(--color-primary-hover);
+  color: #1f1300;
 }
 .update-card h3 { font-size: 20px; font-weight: 500; margin-bottom: 6px; line-height: 1.2; }
 .update-card p { margin: 0; color: var(--color-muted); font-size: 15px; line-height: 1.5; }
