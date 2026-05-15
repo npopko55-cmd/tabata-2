@@ -119,12 +119,16 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .header.is-scrolled { box-shadow: var(--shadow-sm); background: rgba(245,245,245,.95); backdrop-filter: blur(6px); }
 .header__inner {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 14px var(--gutter);
 }
-.header__logo { margin-right: auto; }  /* всё после логотипа уезжает в правый край */
+/* Desktop ≥1025: лого слева, всё остальное справа */
+@media (min-width: 1025px) {
+  .header__logo { margin-right: auto; }
+}
 .header__burger {
   width: 36px; height: 36px;
   display: none;
@@ -157,16 +161,23 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 .header__nav a:hover { color: var(--color-primary); }
 .header__actions { display: flex; gap: 12px; align-items: center; }
 
+/* На любом размере уже nav-меню — лого absolute в центре viewport */
 @media (max-width: 1024px) {
   .header__nav, .header__actions .btn--outline { display: none; }
-}
-@media (max-width: 768px) {
-  .header__actions .btn--primary { display: none; }
   .header__inner {
     justify-content: space-between;
     gap: 8px;
   }
-  .header__logo { margin: 0 auto; }  /* по центру между бургером и actions */
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 1;
+  }
+}
+@media (max-width: 768px) {
+  .header__actions .btn--primary { display: none; }
 }
 
 /* ======================== OVERLAY NAV =========================== */
