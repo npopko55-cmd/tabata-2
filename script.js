@@ -48,31 +48,37 @@
     a.addEventListener('click', () => setNavState(false));
   });
 
-  /* ---------- 4. Popup «Рассрочка» ---------- */
-  const popup = document.getElementById('popup-installment');
-  const openPopup = () => {
-    popup?.classList.add('is-open');
-    popup?.setAttribute('aria-hidden', 'false');
+  /* ---------- 4. Универсальные попапы (по ID) ---------- */
+  const openPopupById = (id) => {
+    const popup = document.getElementById(id);
+    if (!popup) return;
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
-  const closePopup = () => {
-    popup?.classList.remove('is-open');
-    popup?.setAttribute('aria-hidden', 'true');
+  const closeAllPopups = () => {
+    document.querySelectorAll('.popup.is-open').forEach((p) => {
+      p.classList.remove('is-open');
+      p.setAttribute('aria-hidden', 'true');
+    });
     document.body.style.overflow = '';
   };
 
+  // Любой элемент с data-popup="popup-id" открывает соответствующий попап.
+  // Для обратной совместимости: data-popup без значения → popup-installment.
   document.querySelectorAll('[data-popup]').forEach((trigger) => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
-      openPopup();
+      const id = trigger.getAttribute('data-popup') || 'popup-installment';
+      openPopupById(id);
     });
   });
-  popup?.querySelectorAll('[data-close]').forEach((el) => {
-    el.addEventListener('click', closePopup);
+  document.querySelectorAll('.popup [data-close]').forEach((el) => {
+    el.addEventListener('click', closeAllPopups);
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      closePopup();
+      closeAllPopups();
       setNavState(false);
     }
   });

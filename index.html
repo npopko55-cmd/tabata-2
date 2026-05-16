@@ -25,7 +25,7 @@
   <!-- Preload hero-картинки — попадает в первый экран, ускоряет LCP -->
   <link rel="preload" as="image" href="https://static.tildacdn.com/tild6566-3034-4361-a332-643963366461/522A7353_1.jpg" fetchpriority="high" />
 
-  <link rel="stylesheet" href="styles.css?v=20260516a" />
+  <link rel="stylesheet" href="styles.css?v=20260516b" />
 </head>
 <body>
 
@@ -282,8 +282,9 @@
     <div class="rates__grid">
 
       <article class="rate-card">
+        <span class="rate-card__badge-top rate-card__badge-top--bonus">2&nbsp;+&nbsp;1 в&nbsp;подарок</span>
         <span class="rate-card__discount">Скидка 62%</span>
-        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 3 месяца <span class="rate-card__title-bonus">2&nbsp;+&nbsp;1 в&nbsp;подарок</span></h3>
+        <h3 class="rate-card__title">Абонемент + Табата на 3 месяца</h3>
         <div class="rate-card__price">
           <span class="rate-card__old">7 990 ₽</span>
           <span class="rate-card__new">2 990 ₽</span>
@@ -298,15 +299,13 @@
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <div class="rate-card__cta-wrap" data-tariff="3-months">
-          <script id="caf18716b3b818a61659684f1ef7a126571e6e6c" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604829"></script>
-        </div>
+        <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-3m">Записаться на Табату</button>
       </article>
 
       <article class="rate-card rate-card--featured">
         <span class="rate-card__badge-top">Хит продаж</span>
         <span class="rate-card__discount">Скидка 68%</span>
-        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 6 месяцев</h3>
+        <h3 class="rate-card__title">Абонемент + Табата на 6 месяцев</h3>
         <div class="rate-card__price">
           <span class="rate-card__old">12 990 ₽</span>
           <span class="rate-card__new">4 190 ₽</span>
@@ -321,14 +320,12 @@
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <div class="rate-card__cta-wrap" data-tariff="6-months">
-          <script id="21e05ca307657276fb105b972c368bac9304e306" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604831"></script>
-        </div>
+        <button type="button" class="btn btn--white btn--block" data-popup="popup-buy-6m">Записаться на Табату</button>
       </article>
 
       <article class="rate-card">
         <span class="rate-card__discount">Скидка 68%</span>
-        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 2 года</h3>
+        <h3 class="rate-card__title">Абонемент + Табата на 2 года</h3>
         <div class="rate-card__price">
           <span class="rate-card__old">25 990 ₽</span>
           <span class="rate-card__new">8 190 ₽</span>
@@ -344,9 +341,7 @@
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <div class="rate-card__cta-wrap" data-tariff="2-years">
-          <script id="2eedae02ea8d8f5ab20544229978d558b8ea64b1" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604834"></script>
-        </div>
+        <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-2y">Записаться на Табату</button>
       </article>
 
     </div>
@@ -497,7 +492,46 @@
   <div class="popup__box">
     <button class="popup__close" data-close aria-label="Закрыть">×</button>
     <h3>Рассрочка</h3>
-    <p>Вы можете приобрести абонемент в рассрочку. Для этого нажмите на кнопку «Записаться на Табату 2.0», введите свою почту и на странице оплаты выберите вариант «Рассрочка».</p>
+    <p>Вы можете приобрести абонемент в рассрочку. Для этого нажмите на кнопку «Записаться на Табату», введите свою почту и на странице оплаты выберите вариант «Рассрочка».</p>
+  </div>
+</div>
+
+<!-- POPUP оплаты: 3 месяца -->
+<div class="popup" id="popup-buy-3m" aria-hidden="true">
+  <div class="popup__overlay" data-close></div>
+  <div class="popup__box">
+    <button class="popup__close" data-close aria-label="Закрыть">×</button>
+    <h3>Абонемент + Табата на 3 месяца</h3>
+    <p class="popup__sub">Цена 2 990 ₽ — оплатите за 1 минуту</p>
+    <div class="popup__widget">
+      <script id="caf18716b3b818a61659684f1ef7a126571e6e6c" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604829"></script>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP оплаты: 6 месяцев -->
+<div class="popup" id="popup-buy-6m" aria-hidden="true">
+  <div class="popup__overlay" data-close></div>
+  <div class="popup__box">
+    <button class="popup__close" data-close aria-label="Закрыть">×</button>
+    <h3>Абонемент + Табата на 6 месяцев</h3>
+    <p class="popup__sub">Цена 4 190 ₽ — оплатите за 1 минуту</p>
+    <div class="popup__widget">
+      <script id="21e05ca307657276fb105b972c368bac9304e306" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604831"></script>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP оплаты: 2 года -->
+<div class="popup" id="popup-buy-2y" aria-hidden="true">
+  <div class="popup__overlay" data-close></div>
+  <div class="popup__box">
+    <button class="popup__close" data-close aria-label="Закрыть">×</button>
+    <h3>Абонемент + Табата на 2 года</h3>
+    <p class="popup__sub">Цена 8 190 ₽ — оплатите за 1 минуту</p>
+    <div class="popup__widget">
+      <script id="2eedae02ea8d8f5ab20544229978d558b8ea64b1" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604834"></script>
+    </div>
   </div>
 </div>
 
