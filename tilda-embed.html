@@ -28,7 +28,6 @@
   
 
 <style>
-/* === ШАГАТЕЛЬНАЯ ТАБАТА 2.0 — стили === */
 /* =============================================================
    Шагательная Табата 2.0 — стили
    Палитра, типографика и сетка переснята с walk-walk.ru/programs/tabata
@@ -892,12 +891,20 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" stroke="%23ce2c01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>');
 }
 
-/* === Первый «hero»-пункт с молнией вместо галочки === */
+/* === Hero-пункты с молнией вместо галочки === */
 .rate-card__features-hero {
   font-size: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   padding-left: 30px;
   position: relative;
+}
+/* Второй hero-пункт (Абонемент в клуб) — с отступом сверху для визуального разделения */
+.rate-card__features-hero + .rate-card__features-hero {
+  margin-top: 6px;
+}
+/* Первый обычный пункт после hero (буллит клуба) — с маленьким отступом */
+.rate-card__features-hero + .rate-card__features-hero ~ li:not(.rate-card__features-hero):first-of-type {
+  margin-top: 4px;
 }
 .rate-card__features-hero::before {
   content: "⚡" !important;
@@ -1358,7 +1365,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 
       <article class="rate-card">
         <span class="rate-card__discount">Скидка 62%</span>
-        <h3 class="rate-card__title">Абонемент на 2 месяца</h3>
+        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 2 месяца</h3>
         <div class="rate-card__price">
           <span class="rate-card__old">7 990 ₽</span>
           <span class="rate-card__new">2 990 ₽</span>
@@ -1367,6 +1374,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 498 ₽</a>
         <ul class="rate-card__features">
           <li class="rate-card__features-hero"><strong>Интенсив «Табата 2.0»</strong></li>
+          <li class="rate-card__features-hero"><strong>Абонемент в клуб «Шагай Дома»:</strong></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 350+ шагательных тренировок</li>
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
@@ -1378,7 +1386,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
       <article class="rate-card rate-card--featured">
         <span class="rate-card__badge-top">Хит продаж</span>
         <span class="rate-card__discount">Скидка 68%</span>
-        <h3 class="rate-card__title">Абонемент на 6 месяцев</h3>
+        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 6 месяцев</h3>
         <div class="rate-card__price">
           <span class="rate-card__old">12 990 ₽</span>
           <span class="rate-card__new">4 190 ₽</span>
@@ -1387,6 +1395,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 698 ₽</a>
         <ul class="rate-card__features">
           <li class="rate-card__features-hero"><strong>Интенсив «Табата 2.0»</strong></li>
+          <li class="rate-card__features-hero"><strong>Абонемент в клуб «Шагай Дома»:</strong></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 350+ шагательных тренировок</li>
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
@@ -1397,7 +1406,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 
       <article class="rate-card">
         <span class="rate-card__discount">Скидка 68%</span>
-        <h3 class="rate-card__title">Абонемент на 2 года</h3>
+        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 2 года</h3>
         <div class="rate-card__price">
           <span class="rate-card__old">25 990 ₽</span>
           <span class="rate-card__new">8 190 ₽</span>
@@ -1406,6 +1415,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 1 365 ₽</a>
         <ul class="rate-card__features">
           <li class="rate-card__features-hero"><strong>Интенсив «Табата 2.0»</strong></li>
+          <li class="rate-card__features-hero"><strong>Абонемент в клуб «Шагай Дома»:</strong></li>
           <li><em>Бесплатное пополнение шагательных тренировок и программ</em></li>
           <li>Поддержка чата участников и куратора</li>
           <li>25 программ и 350+ шагательных тренировок</li>
@@ -1582,7 +1592,6 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 
 
 <script>
-/* === ШАГАТЕЛЬНАЯ ТАБАТА 2.0 — клиентский JS === */
 /* =============================================================
    Шагательная Табата 2.0 — клиентский JS
    Без зависимостей. Запускается на DOMContentLoaded.
