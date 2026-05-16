@@ -820,9 +820,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .rate-card__title { font-size: 22px; font-family: var(--font-h); font-weight: 500; }
 
-/* Bonus-бейдж «2+1 в подарок» — красный с белым текстом */
+/* Bonus-бейдж «2+1 в подарок» — зелёный (выгода) */
 .rate-card__badge-top--bonus {
-  background: var(--color-primary);
+  background: #19b35a;
   color: #fff;
 }
 /* «Самый выгодный» — тёмный для солидности */
