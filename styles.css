@@ -820,10 +820,15 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .rate-card__title { font-size: 22px; font-family: var(--font-h); font-weight: 500; }
 
-/* Bonus-бейдж «2+1 в подарок» — наследует стиль «Хит продаж» */
+/* Bonus-бейдж «2+1 в подарок» — красный с белым текстом */
 .rate-card__badge-top--bonus {
   background: var(--color-primary);
   color: #fff;
+}
+/* «Самый выгодный» — тёмный для солидности */
+.rate-card__badge-top--best {
+  background: #1f1300;
+  color: var(--color-primary-hover);
 }
 
 /* Стили под виджет внутри попапа */

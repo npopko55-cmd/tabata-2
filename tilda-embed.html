@@ -850,10 +850,15 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .rate-card__title { font-size: 22px; font-family: var(--font-h); font-weight: 500; }
 
-/* Bonus-бейдж «2+1 в подарок» — наследует стиль «Хит продаж» */
+/* Bonus-бейдж «2+1 в подарок» — красный с белым текстом */
 .rate-card__badge-top--bonus {
   background: var(--color-primary);
   color: #fff;
+}
+/* «Самый выгодный» — тёмный для солидности */
+.rate-card__badge-top--best {
+  background: #1f1300;
+  color: var(--color-primary-hover);
 }
 
 /* Стили под виджет внутри попапа */
@@ -1151,7 +1156,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
     </a>
 
     <div class="header__actions">
-      <a href="#rates" class="btn btn--primary btn--sm">Записаться на Табату</a>
+      <a href="#rates" class="btn btn--primary btn--sm">Получить Табату 2.0</a>
       <a href="https://clck.ru/3RpVut" class="btn btn--outline btn--sm" target="_blank" rel="noopener">Личный кабинет</a>
     </div>
   </div>
@@ -1165,7 +1170,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   <nav class="overlay-nav__list">
     <a href="#about">Что такое Табата</a>
     <a href="#forwhom">Для кого</a>
-    <a href="#rates">Записаться на Табату</a>
+    <a href="#rates">Получить Табату 2.0</a>
     <a href="https://clck.ru/3RpVut" target="_blank" rel="noopener">Личный кабинет</a>
     <a href="#contacts">Контакты</a>
     <a href="https://walk-walk.ru/blog/" target="_blank" rel="noopener">Блог</a>
@@ -1187,7 +1192,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   </div>
 
   <div class="overlay-nav__cta">
-    <a href="#rates" class="btn btn--white btn--block">Записаться на Табату</a>
+    <a href="#rates" class="btn btn--white btn--block">Получить Табату 2.0</a>
   </div>
 </div>
 <div class="overlay-nav__backdrop" id="overlayBackdrop"></div>
@@ -1220,7 +1225,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           </li>
         </ul>
 
-        <a href="#rates" class="btn btn--white btn--lg btn--block hero__cta">Записаться на Табату 2.0</a>
+        <a href="#rates" class="btn btn--white btn--lg btn--block hero__cta">Получить Табату 2.0</a>
       </div>
 
       <div class="hero__image" style="background-image:url('https://static.tildacdn.com/tild6566-3034-4361-a332-643963366461/522A7353_1.jpg');"></div>
@@ -1404,7 +1409,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-3m">Записаться на Табату</button>
+        <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-3m">Получить Табату 2.0</button>
       </article>
 
       <article class="rate-card rate-card--featured">
@@ -1425,10 +1430,11 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <button type="button" class="btn btn--white btn--block" data-popup="popup-buy-6m">Записаться на Табату</button>
+        <button type="button" class="btn btn--white btn--block" data-popup="popup-buy-6m">Получить Табату 2.0</button>
       </article>
 
       <article class="rate-card">
+        <span class="rate-card__badge-top rate-card__badge-top--best">Самый выгодный</span>
         <span class="rate-card__discount">Скидка 68%</span>
         <h3 class="rate-card__title">Табата + Абонемент на 2 года</h3>
         <div class="rate-card__price">
@@ -1446,7 +1452,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-2y">Записаться на Табату</button>
+        <button type="button" class="btn btn--primary btn--block" data-popup="popup-buy-2y">Получить Табату 2.0</button>
       </article>
 
     </div>
@@ -1597,7 +1603,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   <div class="popup__box">
     <button class="popup__close" data-close aria-label="Закрыть">×</button>
     <h3>Рассрочка</h3>
-    <p>Вы можете приобрести абонемент в рассрочку. Для этого нажмите на кнопку «Записаться на Табату», введите свою почту и на странице оплаты выберите вариант «Рассрочка».</p>
+    <p>Вы можете приобрести абонемент в рассрочку. Для этого нажмите на кнопку «Получить Табату 2.0», введите свою почту и на странице оплаты выберите вариант «Рассрочка».</p>
   </div>
 </div>
 
@@ -1645,7 +1651,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 <!-- ============================================================ -->
 <div class="sticky-cta" id="stickyCTA">
   <a href="#rates" class="sticky-cta__btn">
-    <span class="sticky-cta__label">Записаться на Табату</span>
+    <span class="sticky-cta__label">Получить Табату 2.0</span>
     <span class="sticky-cta__icon">→</span>
   </a>
 </div>
