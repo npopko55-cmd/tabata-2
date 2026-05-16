@@ -818,7 +818,46 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   box-shadow: 0 6px 16px rgba(0,0,0,.15);
   white-space: nowrap;
 }
-.rate-card__title { font-size: 22px; font-family: var(--font-h); font-weight: 500; }
+.rate-card__title {
+  font-size: 22px;
+  font-family: var(--font-h);
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* Бейдж-приписка к заголовку «2 + 1 в подарок» */
+.rate-card__title-bonus {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--color-primary-hover);
+  color: #1f1300;
+  font-family: var(--font-b);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+.rate-card--featured .rate-card__title-bonus { background: #fff; color: var(--color-primary); }
+
+/* Обёртка под GetCourse-виджет — приводит инжектированную кнопку к нашему стилю */
+.rate-card__cta-wrap {
+  margin-top: auto;     /* прижимает кнопку к низу карточки */
+  display: block;
+  width: 100%;
+}
+.rate-card__cta-wrap > *:not(script) {
+  width: 100% !important;
+  display: block !important;
+}
+/* На случай если GetCourse вставит кнопку как <a> или <button> */
+.rate-card__cta-wrap a,
+.rate-card__cta-wrap button {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 .rate-card__price { display: flex; flex-direction: column; gap: 4px; }
 .rate-card__old {
   text-decoration: line-through;

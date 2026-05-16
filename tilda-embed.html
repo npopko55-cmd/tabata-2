@@ -848,7 +848,46 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   box-shadow: 0 6px 16px rgba(0,0,0,.15);
   white-space: nowrap;
 }
-.rate-card__title { font-size: 22px; font-family: var(--font-h); font-weight: 500; }
+.rate-card__title {
+  font-size: 22px;
+  font-family: var(--font-h);
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* Бейдж-приписка к заголовку «2 + 1 в подарок» */
+.rate-card__title-bonus {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--color-primary-hover);
+  color: #1f1300;
+  font-family: var(--font-b);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+.rate-card--featured .rate-card__title-bonus { background: #fff; color: var(--color-primary); }
+
+/* Обёртка под GetCourse-виджет — приводит инжектированную кнопку к нашему стилю */
+.rate-card__cta-wrap {
+  margin-top: auto;     /* прижимает кнопку к низу карточки */
+  display: block;
+  width: 100%;
+}
+.rate-card__cta-wrap > *:not(script) {
+  width: 100% !important;
+  display: block !important;
+}
+/* На случай если GetCourse вставит кнопку как <a> или <button> */
+.rate-card__cta-wrap a,
+.rate-card__cta-wrap button {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 .rate-card__price { display: flex; flex-direction: column; gap: 4px; }
 .rate-card__old {
   text-decoration: line-through;
@@ -1365,11 +1404,11 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 
       <article class="rate-card">
         <span class="rate-card__discount">Скидка 62%</span>
-        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 2 месяца</h3>
+        <h3 class="rate-card__title">Абонемент + Табата 2.0 на 3 месяца <span class="rate-card__title-bonus">2&nbsp;+&nbsp;1 в&nbsp;подарок</span></h3>
         <div class="rate-card__price">
           <span class="rate-card__old">7 990 ₽</span>
           <span class="rate-card__new">2 990 ₽</span>
-          <span class="rate-card__monthly">1 495 ₽ в месяц</span>
+          <span class="rate-card__monthly">997 ₽ в месяц</span>
         </div>
         <a href="#popup-installment" class="rate-card__installment" data-popup>Доступна рассрочка 6 платежей по 498 ₽</a>
         <ul class="rate-card__features">
@@ -1380,7 +1419,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <a href="/2-months" class="btn btn--primary btn--block">Записаться на Табату 2.0</a>
+        <div class="rate-card__cta-wrap" data-tariff="3-months">
+          <script id="caf18716b3b818a61659684f1ef7a126571e6e6c" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604829"></script>
+        </div>
       </article>
 
       <article class="rate-card rate-card--featured">
@@ -1401,7 +1442,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <a href="/6-months" class="btn btn--white btn--block">Записаться на Табату 2.0</a>
+        <div class="rate-card__cta-wrap" data-tariff="6-months">
+          <script id="21e05ca307657276fb105b972c368bac9304e306" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604831"></script>
+        </div>
       </article>
 
       <article class="rate-card">
@@ -1422,7 +1465,9 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
           <li>60 рецептов полезной еды, вебинары про здоровье</li>
           <li>30 тренировок для здоровья спины и растяжек</li>
         </ul>
-        <a href="/all" class="btn btn--primary btn--block">Записаться на Табату 2.0</a>
+        <div class="rate-card__cta-wrap" data-tariff="2-years">
+          <script id="2eedae02ea8d8f5ab20544229978d558b8ea64b1" src="https://my.walk-walk.ru/pl/lite/widget/script?id=1604834"></script>
+        </div>
       </article>
 
     </div>
